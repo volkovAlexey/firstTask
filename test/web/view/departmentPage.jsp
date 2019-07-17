@@ -5,17 +5,17 @@
 </head>
 <body>
 <style>
-    a {
+    .button {
         border: 1px solid #ffb4be;
         background-color: #00ffff;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
         display: inline-block;
-        padding: 3px 7px;
+        padding: 1px 7px;
         text-decoration: none;
         color: black
     }
 
-    a:hover {
+    .button:hover {
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
         background: linear-gradient(to bottom, #b7fafa, #d8ffff);
         color: black;
@@ -29,10 +29,10 @@
       method="post">
     <p><input type="text" name="name" placeholder="Name" value="${requestScope.department.departmentName}" required>
         <span class="error"> ${requestScope.error.name}</span></p>
-    <input type="submit" value="Submit">
+    <input class="button" type="submit" value="Submit">
 </form>
 <p>
-    <a href="${pageContext.request.contextPath}/departmentList">back</a>
+    <a href="${pageContext.request.contextPath}/departmentList" class="button">back</a>
 </p>
 </body>
 </html>

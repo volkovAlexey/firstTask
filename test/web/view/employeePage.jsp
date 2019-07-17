@@ -6,17 +6,17 @@
 </head>
 <body>
 <style>
-    a {
+    .button {
         border: 1px solid #ffb4be;
         background-color: #00ffff;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
         display: inline-block;
-        padding: 3px 7px;
+        padding: 1px 7px;
         text-decoration: none;
         color: black
     }
 
-    a:hover {
+    .button:hover {
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
         background: linear-gradient(to bottom, #b7fafa, #d8ffff);
         color: black;
@@ -48,10 +48,10 @@
         <input type="email" name="email" placeholder="Email" value="${requestScope.employee.email}" required>
     </label><span
             class="error"> ${requestScope.error.email}</span></p>
-    <input type="submit" value="Submit">
+    <input class="button" type="submit" value="Submit">
 </form>
 <p>
-    <a href="<c:url value="/employeeList?idDepartment=${param.idDepartment}"/>">back</a>
+    <a href="${pageContext.request.contextPath}/employeeList?idDepartment=${param.idDepartment}" class="button">back</a>
 </p>
 </body>
 </html>

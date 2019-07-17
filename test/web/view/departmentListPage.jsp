@@ -19,24 +19,24 @@
         text-align: left;
     }
 
-    a {
+    .button {
         border: 1px solid #ffb4be;
         background-color: #00ffff;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
         display: inline-block;
-        padding: 3px 7px;
+        padding: 1px 7px;
         text-decoration: none;
         color: black
     }
 
-    a:hover {
+    .button:hover {
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
         background: linear-gradient(to bottom, #b7fafa, #d8ffff);
         color: black;
     }
 </style>
 <br>
-<a href="${pageContext.request.contextPath}/departmentPage">Create Department</a>
+<a href="${pageContext.request.contextPath}/departmentPage" class="button">Create Department</a>
 <table>
     <tr>
         <th>id</th>
@@ -50,16 +50,17 @@
             <td>${department.idDepartment}</td>
             <td>${department.departmentName}</td>
             <td>
-                <a href="${pageContext.request.contextPath}/employeeList?idDepartment=${department.idDepartment}">Show
+                <a href="${pageContext.request.contextPath}/employeeList?idDepartment=${department.idDepartment}" class="button">Show
                     List Employees</a>
             </td>
             <td>
-                <a href="${pageContext.request.contextPath}/departmentController?idDepartment=${department.idDepartment}">Update</a>
+                <a href="${pageContext.request.contextPath}/departmentController?idDepartment=${department.idDepartment}" class="button">Update</a>
             </td>
             <td>
+                <br>
                 <form action="${pageContext.request.contextPath}/removeDepartment?idDepartment=${department.idDepartment}"
                       method="post">
-                    <input type="submit" value="Remove">
+                    <input class="button" type="submit" value="Remove">
                 </form>
             </td>
         </tr>
