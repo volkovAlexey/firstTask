@@ -37,7 +37,7 @@ public class DepartmentServlet extends HttpServlet {
         int id = Integer.parseInt(parameterId);
         department = findDepartmentById(id);
         req.setAttribute("department", department);
-        String url = "/view/updateDepartmentPage.jsp";
+        String url = "/view/departmentPage.jsp";
         req.getRequestDispatcher(url).forward(req, resp);
     }
 
@@ -56,16 +56,18 @@ public class DepartmentServlet extends HttpServlet {
         if (!errorMap.isEmpty()) {
             req.setAttribute("error", errorMap);
             req.setAttribute("department", department);
-            if (parameterId == null) {
-                String urlCreate = "/view/createDepartmentPage.jsp";
-                req.getRequestDispatcher(urlCreate).forward(req, resp);
-                return;
-            } else {
-                String urlUpdate = "/view/updateDepartmentPage.jsp?idDepartment=" + parameterId +
-                        "&name=" + parameterName;
-                req.getRequestDispatcher(urlUpdate).forward(req, resp);
-                return;
-            }
+            String urlCreate = "/view/departmentPage.jsp";
+            req.getRequestDispatcher(urlCreate).forward(req, resp);
+            return;
+//            if (parameterId == null) {
+//
+//
+//            } else {
+//                String urlUpdate = "/view/departmentPage.jsp?idDepartment=" + parameterId +
+//                        "&name=" + parameterName;
+//                req.getRequestDispatcher(urlUpdate).forward(req, resp);
+//                return;
+//            }
         }
         if (parameterId == null) {
             create(department);

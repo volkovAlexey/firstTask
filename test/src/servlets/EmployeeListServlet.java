@@ -15,7 +15,7 @@ import java.util.List;
 
 @WebServlet(value = "/employeeList")
 public class EmployeeListServlet extends HttpServlet {
-    EmployeeDaoImpl employeeDao;
+    private EmployeeDaoImpl employeeDao;
 
     @Override
     public void init() throws ServletException {

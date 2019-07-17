@@ -38,12 +38,11 @@ public class EmployeeServlet extends HttpServlet {
         int id = Integer.parseInt(idEmployee);
         employee = findEmployeeById(id);
         req.setAttribute("employee", employee);
-        String url = "/view/updateEmployeePage.jsp";
+        String url = "/view/employeePage.jsp?idDepartment=" + employee.getIdDepartment();
         req.getRequestDispatcher(url).forward(req, resp);
     }
 
     private Employee findEmployeeById(int id) {
-        Employee employee = null;
         try {
             employee = employeeDao.findById(id);
         } catch (SQLException | DBConnectionException e) {
@@ -77,18 +76,11 @@ public class EmployeeServlet extends HttpServlet {
         if (!errorsMap.isEmpty()) {
             req.setAttribute("employee", employee);
             req.setAttribute("error", errorsMap);
-            if (idEmployee == null) {
-                String urlCreatePage = "/view/createEmployeePage.jsp?idDepartment="
-                        + idDepartment;
-                req.getRequestDispatcher(urlCreatePage).forward(req, resp);
-                return;
-            } else {
-                String urlUpdate = "/view/updateEmployeePage.jsp";
-                req.getRequestDispatcher(urlUpdate).forward(req, resp);
-                return;
-            }
+            String url = "/view/employeePage.jsp";
+            req.getRequestDispatcher(url).forward(req, resp);
+            return;
         }
-        if (idEmployee != null) {
+        if (!idEmployee.isEmpty()) {
             employee.setIdEmployee(Integer.parseInt(idEmployee));
             updateData(employee);
         } else {

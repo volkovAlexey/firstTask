@@ -17,7 +17,7 @@ public class Config {
             String password = configurationManager.getProperty(ConfigurationManager.PASSWORD);
             return DriverManager.getConnection(url, user, password);
         } catch (final Exception e) {
-            System.out.println(e.getMessage());
+           e.getMessage();
             throw new DBConnectionException();
         }
     }

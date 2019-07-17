@@ -17,7 +17,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
     private static final String UPDATE_EMPLOYEE = "UPDATE employees SET firstName = ?, lastName = ?, birthDate = ?, " +
             "salary = ?, email = ? WHERE id = ?";
     private static final String FIND_BY_ID = "SELECT * FROM employees WHERE id = ?";
-    public static final String FIND_BY_ID_AND_EMAIL = "SELECT id,email FROM employees WHERE email = ?";
+    private static final String FIND_BY_ID_AND_EMAIL = "SELECT id,email FROM employees WHERE email = ?";
 
     @Override
     public List<Employee> findAllByIdDepartment(int idDepartment) throws SQLException, DBConnectionException {
@@ -105,7 +105,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
     }
 
     @Override
-    public boolean findByIdAndEmail(String idEmployee, String email) throws SQLException {
+    public boolean isDuplicateEmail(String idEmployee, String email) throws SQLException {
         ResultSet rs = null;
         try (Connection con = Config.getConnection();
              PreparedStatement prStatement = con.prepareStatement(FIND_BY_ID_AND_EMAIL)) {

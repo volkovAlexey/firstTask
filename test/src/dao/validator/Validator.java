@@ -20,6 +20,9 @@ public class Validator {
     private static final String NOT_CORRECTLY = "This field is not correctly";
     private static final String EMAIL_ALREADY_EXISTS = "This email already exists!";
     private static final String NAME_ALREADY_EXISTS = "This name already exists!";
+    private static Pattern pattern = Pattern.compile(EMAIL_PATTERN);
+    private static EmployeeDao employeeDao = new EmployeeDaoImpl();
+    private static DepartmentDao departmentDao = new DepartmentDaoImpl();
 
     public void validateStringField(String fieldName, String value, Map<String, String> errorsMap) {
         if (isEmptyField(value)) {
@@ -42,7 +45,6 @@ public class Validator {
     }
 
     public void emailValidation(String fieldName, String id, String value, Map<String, String> errorMap){
-        Pattern pattern = Pattern.compile(EMAIL_PATTERN);
         Matcher matcher = pattern.matcher(value);
         if (!matcher.matches()) {
             errorMap.put(fieldName, WRONG_EMAIL);
@@ -60,10 +62,9 @@ public class Validator {
     }
 
     private boolean isEmailDuplicate(String id, String email){
-        EmployeeDao employeeDao = new EmployeeDaoImpl();
         boolean isFind = false;
         try {
-           isFind = employeeDao.findByIdAndEmail(id, email);
+           isFind = employeeDao.isDuplicateEmail(id, email);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -71,8 +72,7 @@ public class Validator {
     }
 
     private boolean isNameDuplicate(String id, String name) {
-        DepartmentDao departmentDao = new DepartmentDaoImpl();
-        return departmentDao.findByIdAndName(id, name);
+        return departmentDao.isDuplicateName(id, name);
     }
 
     private boolean isNegative(String num) {

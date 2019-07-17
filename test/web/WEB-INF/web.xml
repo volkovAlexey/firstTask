@@ -16,28 +16,12 @@
         <url-pattern>/departments</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>Create Department</servlet-name>
-        <jsp-file>/view/createDepartmentPage.jsp</jsp-file>
+        <servlet-name>Department Page</servlet-name>
+        <jsp-file>/view/departmentPage.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
-        <servlet-name>Create Department</servlet-name>
-        <url-pattern>/createDepartmentPage</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>Update Department</servlet-name>
-        <jsp-file>/view/updateDepartmentPage.jsp</jsp-file>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Update Department</servlet-name>
-        <url-pattern>/updateDepartmentPage</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>Create Employee</servlet-name>
-        <jsp-file>/view/createEmployeePage.jsp</jsp-file>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Create Employee</servlet-name>
-        <url-pattern>/createEmployeePage</url-pattern>
+        <servlet-name>Department Page</servlet-name>
+        <url-pattern>/departmentPage</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>Employee List</servlet-name>
@@ -48,11 +32,11 @@
         <url-pattern>/employeeListPage</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>Update Employee</servlet-name>
-        <jsp-file>/view/updateEmployeePage.jsp</jsp-file>
+        <servlet-name>Employee Page</servlet-name>
+        <jsp-file>/view/employeePage.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
-        <servlet-name>Update Employee</servlet-name>
-        <url-pattern>/updateEmployeePage</url-pattern>
+        <servlet-name>Employee Page</servlet-name>
+        <url-pattern>/employeePage</url-pattern>
     </servlet-mapping>
 </web-app>

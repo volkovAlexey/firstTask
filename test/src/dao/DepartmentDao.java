@@ -17,5 +17,5 @@ public interface DepartmentDao {
 
     Department findById(int id);
 
-    boolean findByIdAndName(String id, String name);
+    boolean isDuplicateName(String id, String name);
 }

@@ -20,7 +20,7 @@ public class RemoveEmployeeServlet extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String parameterEmployee = req.getParameter("idEmployee");
         String parameterDepartment = req.getParameter("idDepartment");
         int idEmployee = Integer.parseInt(parameterEmployee);

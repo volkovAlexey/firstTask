@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
 @WebServlet(value = "/removeDepartment")
 public class RemoveDepartmentServlet extends HttpServlet {
-    DepartmentDaoImpl departmentDao;
+    private DepartmentDaoImpl departmentDao;
 
     @Override
     public void init() throws ServletException {
@@ -20,7 +20,7 @@ public class RemoveDepartmentServlet extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String parameter = req.getParameter("idDepartment");
         int idDepartment = Integer.parseInt(parameter);
         removeById(idDepartment);

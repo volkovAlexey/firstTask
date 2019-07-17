@@ -18,5 +18,5 @@ public interface EmployeeDao {
 
     void update(Employee employee) throws SQLException;
 
-    boolean findByIdAndEmail(String idEmployee, String email) throws SQLException;
+    boolean isDuplicateEmail(String idEmployee, String email) throws SQLException;
 }

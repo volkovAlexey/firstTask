@@ -36,7 +36,7 @@
     }
 </style>
 <br>
-<a href="${pageContext.request.contextPath}/createEmployeePage?idDepartment=${param.idDepartment}">Create
+<a href="${pageContext.request.contextPath}/employeePage?idDepartment=${param.idDepartment}">Create
     Employee</a>
 <table>
     <tr>
@@ -61,7 +61,10 @@
                 <a href="${pageContext.request.contextPath}/employeeController?idEmployee=${employee.idEmployee}">Update</a>
             </td>
             <td>
-                <a href="${pageContext.request.contextPath}/removeEmployee?idEmployee=${employee.idEmployee}&idDepartment=${employee.idDepartment}">Remove</a>
+                <form action="${pageContext.request.contextPath}/removeEmployee?idEmployee=${employee.idEmployee}&idDepartment=${employee.idDepartment}"
+                      method="post">
+                    <input type="submit" value="Remove">
+                </form>
             </td>
         </tr>
     </c:forEach>

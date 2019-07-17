@@ -53,11 +53,7 @@ public class Employee {
     }
 
     public void setSalary(double salary) {
-        if(salary < 0){
-            throw new IllegalArgumentException("Salary can't be negative!");
-        }else {
-            this.salary = salary;
-        }
+        this.salary = salary;
     }
 
     public String getEmail() {

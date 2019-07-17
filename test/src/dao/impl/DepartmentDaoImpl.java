@@ -17,7 +17,6 @@ public class DepartmentDaoImpl implements DepartmentDao {
     private static final String UPDATE_DEPARTMENT = "UPDATE departments SET name = ? WHERE id = ?";
     private static final String FIND_DEPARTMENT = "SELECT * FROM departments WHERE id = ?";
     private static final String FIND_BY_NAME = "SELECT * FROM departments WHERE name = ?";
-//    private static final String FIND_BY_NAME = "SELECT name FROM departments WHERE name = ?";
 
     @Override
     public List<Department> findAll() throws SQLException, DBConnectionException {
@@ -66,7 +65,7 @@ public class DepartmentDaoImpl implements DepartmentDao {
     }
 
     @Override
-    public boolean findByIdAndName(String id, String name) {
+    public boolean isDuplicateName(String id, String name) {
         ResultSet rs = null;
         try (Connection con = Config.getConnection();
              PreparedStatement prStatement = con.prepareStatement(FIND_BY_NAME)) {
