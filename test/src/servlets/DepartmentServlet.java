@@ -59,15 +59,6 @@ public class DepartmentServlet extends HttpServlet {
             String urlCreate = "/view/departmentPage.jsp";
             req.getRequestDispatcher(urlCreate).forward(req, resp);
             return;
-//            if (parameterId == null) {
-//
-//
-//            } else {
-//                String urlUpdate = "/view/departmentPage.jsp?idDepartment=" + parameterId +
-//                        "&name=" + parameterName;
-//                req.getRequestDispatcher(urlUpdate).forward(req, resp);
-//                return;
-//            }
         }
         if (parameterId == null) {
             create(department);

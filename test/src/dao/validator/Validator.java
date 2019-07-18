@@ -83,5 +83,4 @@ public class Validator {
     private boolean isEmptyField(String text) {
         return text == null || text.trim().isEmpty();
     }
-
 }

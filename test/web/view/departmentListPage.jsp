@@ -66,5 +66,6 @@
         </tr>
     </c:forEach>
 </table>
+<p><a href="${pageContext.request.contextPath}/index.jsp" class="button">back</a> </p>
 </body>
 </html>

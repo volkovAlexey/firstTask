@@ -5,7 +5,6 @@ import dao.exceptions.DBConnectionException;
 import dao.impl.DepartmentDaoImpl;
 import dao.models.Department;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -44,6 +43,4 @@ public class DepartmentListServlet extends HttpServlet {
         }
         return departments;
     }
-
-
 }
